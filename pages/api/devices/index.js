@@ -1,13 +1,17 @@
 import { readFile, readdir } from "fs/promises";
 import * as axios from "axios";
+import * as dotenv from 'dotenv'
 
-let ccu3Port = "192.168.178.225";
-let ccu3URL = `http://${ccu3Port}/config/xmlapi/`;
+const [NEXT_APP_HOST,NEXT_APP_CCU3PORT,NEXT_APP_CCU33URL ] = dotenv.config().parsed
+/*
+here ist how you make the url for the http Request 
+ccu3 Host + /config/xmlapi/ + device Skript + .cgi
+*/
 
-let Path = __dirname.substring(0, __dirname.length - 22); //C:\Users\domen\OneDrive\Desktop\ccu3\next-ccu-xml-api-app\
+let Path = __dirname.substring(0, __dirname.length - 22);
 
 let test = true;
-let log = true
+let log = false
 
 async function allDevicesFromSkriptFile(path) {
   try {
@@ -39,7 +43,7 @@ async function checkDeviceDataFromFileBackup(device) {
 }
 
 async function deviceDataFromFile(device) {
-  console.log("deviceDataFromFile");
+  if(log)console.log("deviceDataFromFile");
 
   let dirContent = await checkDeviceDataFromFileBackup(device);
   for (let i = 0; i < dirContent.length; i++) {
@@ -62,7 +66,7 @@ async function deviceDataFromFile(device) {
 async function getDeviceDataFromXmlApi(device) {
   if(log)console.log("getDeviceDataFromXmlApi");
   try {
-    let ccu3DeviceUrl = ccu3URL + device.address;
+    let ccu3DeviceUrl = NEXT_APP_CCU33URL + device.address;
     let deviceResponse = await axios.get(ccu3DeviceUrl);
     if(log)console.log('deviceResponse: ',deviceResponse);
     return deviceResponse;
