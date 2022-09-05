@@ -40,6 +40,8 @@ function DeviceList() {
     //axiosRequest('POST',deviceName,(response)=>setDevice('axios POST JSON.stringify(response): ',JSON.stringify(response)))
   }, []);
 
+  console.log('render')
+
   return (
     <>
       <h1>devicelist</h1>
