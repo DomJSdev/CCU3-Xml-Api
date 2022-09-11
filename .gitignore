@@ -4,8 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
-.env.local
-xml-api-data/*.xml
+/xml-api-data/*.xml
 
 # testing
 /coverage
