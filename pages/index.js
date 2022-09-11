@@ -4,6 +4,7 @@ import {AiOutlineMenu} from 'react-icons/ai'
 import {useState, useCallback, useEffect} from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 
 
@@ -27,6 +28,11 @@ function Home() {
 
   return (
     <>
+    <Head>
+    
+
+
+    </Head>
       {/* <button className='p-2 shadow mt-2 mb-2 mr-2 rounded-md bg-sky-700 text-black' onClick={()=>setBackup(true)}>backup</button> */}
       <p>Home seite</p>
     </>
