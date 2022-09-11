@@ -13,7 +13,6 @@ function Home() {
   const [backup,setBackup] = useState(false)
 
   function getBackup(){
-    console.log('backup started')
     axios.get('/api/devices?device=backup')
     return
   }
@@ -29,7 +28,7 @@ function Home() {
   return (
     <>
     <Head>
-    
+
 
 
     </Head>

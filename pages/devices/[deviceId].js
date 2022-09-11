@@ -5,7 +5,6 @@ import {env} from './../../config/env.js';
 
 
 function DevicesPage({deviceDetails}) {  
-  console.log(deviceDetails)
 
   const [device_details, set_device_details] = useState(<p>loading device</p>)
 
@@ -38,7 +37,6 @@ export default DevicesPage;
 
 
 export async function getStaticProps({params}){
-  console.log('params: ',params)
     const DevicesOptionList = await fetch(`${env.host}api/devices?device=${params.deviceId}`).then(res=>res.json())
     return{
       props:{
