@@ -28,7 +28,7 @@ function Header() {
   }, []);
 
   return (
-    <header className="flex p-5 mb-5 rounded-b-xl shadow w-sreen h-20 bg-red-700">
+    <header className="sticky top-0 flex p-5 mb-5 rounded-b-xl shadow w-sreen h-20 bg-red-700">
       <div className="w-1/4 ml-10 mr-10">
         <select
           className="rounded-md shadow bg-white w-1/3 h-8"
