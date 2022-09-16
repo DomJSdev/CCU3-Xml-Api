@@ -6,7 +6,7 @@ function Layout({children}) {
     <>
       <div className="w-sreen h-screen">
         <Header></Header>
-        <main className="p-5 w-screen .main">{children}</main>
+        <main className="mt-20 p-5 w-screen .main">{children}</main>
         <Footer></Footer>
       </div>
     </>

@@ -28,7 +28,7 @@ function Header() {
   }, []);
 
   return (
-    <header className="sticky top-0 flex p-5 mb-5 rounded-b-xl shadow w-sreen h-20 bg-red-700">
+    <header className=" text-center fixed top-0 flex p-5 mb-5 rounded-b-xl shadow w-screen h-13 bg-red-700">
       <div className="w-1/4 ml-10 mr-10">
         <select
           className="rounded-md shadow bg-white w-1/3 h-8"
@@ -49,7 +49,7 @@ function Header() {
           }
         </select>
       </div>
-      <p className="text-white w-1/2 text-3xl">My Homatic CCU3 App</p>
+      <p className="text-white w-5/4 text-3xl">My Homatic CCU3 web</p>
     </header>
   );
 }

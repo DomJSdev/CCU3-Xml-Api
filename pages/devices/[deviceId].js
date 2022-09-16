@@ -1,10 +1,18 @@
 import axios from 'axios';
 import {useRouter} from 'next/router';
 import React, {useCallback, useEffect, useState} from 'react';
+
 import {env} from './../../config/env.js';
+
+import {parseString} from 'xml2js'
+
 
 function DevicesPage({deviceDetails}) {
   const [device_details, set_device_details] = useState(<p>loading device</p>);
+
+parseString(deviceDetails.xml, function (err, result) {
+    console.log(result);
+});
 
   useEffect(() => {
     if (typeof deviceDetails === 'object') {
@@ -20,7 +28,7 @@ function DevicesPage({deviceDetails}) {
             </p>
             <p className="text-center">{deviceDetails.device.description}</p>
           </div>
-          <div className="p-10 mb-5 border-2 border-black w-4/5 m-auto rounded-xl shadow">
+          <div className="p-10 mb-20 border-2 border-black w-4/5 m-auto rounded-xl shadow">
             <p>{deviceDetails.xml}</p>
           </div>
         </>

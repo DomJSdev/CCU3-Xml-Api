@@ -4,7 +4,8 @@
 /node_modules
 /.pnp
 .pnp.js
-/xml-api-data/backup/
+/xml-api-backup-data
+.xml
 
 # testing
 /coverage
