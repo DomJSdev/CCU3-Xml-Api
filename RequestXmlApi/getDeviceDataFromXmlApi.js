@@ -5,7 +5,7 @@ export default async function getDeviceDataFromXmlApi(device) {
   try {
     let ccu3DeviceUrl = env.ccu3_Url + device.address;
     let deviceResponse = await axios.get(ccu3DeviceUrl);
-    return deviceResponse;
+    return deviceResponse.data;
   } catch (error) {
     return new Error(error);
   }
